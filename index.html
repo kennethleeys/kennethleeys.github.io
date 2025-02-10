@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yes/No Buttons</title>
+    <style>
+      .button-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(255, 192, 203, 0.3);
+      }
+      button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 20px;
+        border: 2px solid #ff69b4;
+        background-color: white;
+        color: #ff69b4;
+      }
+      button:hover {
+        background-color: #ff69b4;
+        color: white;
+      }
+      #yesBtn {
+        z-index: 999;
+        transform: scale(1);
+        position: relative;
+      }
+      #noBtn {
+        z-index: 998;
+      }
+      .button-wrapper {
+        position: relative;
+        height: 60px;
+        margin-top: 20px;
+      }
+      .image-container {
+        margin-bottom: 20px;
+      }
+      .image-container img {
+        max-width: 200px;
+        border-radius: 10px;
+      }
+      .text {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #ff69b4;
+        font-family: "Arial", sans-serif;
+      }
+      body {
+        background-color: #ffe6f2;
+        background-image: url("https://i.gifer.com/origin/cf/cf0fd897f5937b7f4d4f1030e65c47be_w200.gif");
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Add this div for preloading images -->
+    <div id="preload" style="display: none;"></div>
+
+    <div class="button-container">
+      <div class="image-container">
+        <img
+          src="https://static.wixstatic.com/media/646c56_eeee63da88dc498a93114fac361578d1~mv2.gif"
+          alt="Cute Valentine Bear"
+        />
+      </div>
+      <div class="text">Will you be my Valentine? ❤️</div>
+      <div class="button-wrapper">
+        <button id="yesBtn" onclick="showLove()">Yes</button>
+        <button id="noBtn" onclick="makeYesBigger()">No</button>
+      </div>
+    </div>
+
+    <script>
+      // Add this preload function at the start
+      function preloadImages() {
+        const preloadDiv = document.getElementById('preload');
+        // Combine all GIFs into one array for preloading
+        const allImages = [
+          ...images,
+          "https://gifdb.com/images/high/cute-love-bear-hug-heart-float-j6k1qzxk0xt6cq0g.gif" // Final success GIF
+        ];
+        
+        // Create hidden img elements for each GIF
+        allImages.forEach(src => {
+          const img = document.createElement('img');
+          img.src = src;
+          preloadDiv.appendChild(img);
+        });
+      }
+
+      // Call preload when page loads
+      window.onload = preloadImages;
+
+      let scale = 1;
+      let messageIndex = 0;
+      const messages = [
+        "Will you be my Valentine now? ❤️",
+        "Are you suuuure? 🥺",
+        "Pretty please? 🌹",
+        "I'll be really sad... 😢",
+        "What if I give you chocolate? 🍫",
+        "And flowers too? 💐",
+        "You're breaking my heart... 💔",
+        "I promise to make you happy! ✨",
+        "Please say yes! 🙏",
+        "I'll never stop trying! 💝",
+      ];
+
+      const images = [
+        "https://static.wixstatic.com/media/646c56_eeee63da88dc498a93114fac361578d1~mv2.gif",  // Initial cute pose
+        "https://static.wixstatic.com/media/646c56_522a27df01f840d9b9e137b07ee6e04e~mv2.gif",  // Pleading
+        "https://static.wixstatic.com/media/646c56_2b6d5d9ba3df4a3089a06ccc7e4e058c~mv2.gif",  // Heart eyes
+        "https://static.wixstatic.com/media/646c56_f4e1f87e9b534e4eafb7fdd2f4f54f1d~mv2.gif",  // Crying
+        "https://static.wixstatic.com/media/646c56_c8d1594c06c14a8ba6eff9c18ce86428~mv2.gif",  // With chocolate
+        "https://static.wixstatic.com/media/646c56_e4e5d3c1a5b54982b4622f3b69832e4c~mv2.gif",  // With flowers
+        "https://static.wixstatic.com/media/646c56_f4e1f87e9b534e4eafb7fdd2f4f54f1d~mv2.gif",  // Sad with broken heart
+        "https://static.wixstatic.com/media/646c56_d499644b89d94a87a26c6d2bb25f77e3~mv2.gif",  // Dancing happily
+        "https://static.wixstatic.com/media/646c56_522a27df01f840d9b9e137b07ee6e04e~mv2.gif",  // Begging
+        "https://static.wixstatic.com/media/646c56_2b6d5d9ba3df4a3089a06ccc7e4e058c~mv2.gif",  // Determined with hearts
+      ];
+
+      function makeYesBigger() {
+        const yesBtn = document.getElementById("yesBtn");
+        const textDiv = document.querySelector(".text");
+        const imgElement = document.querySelector(".image-container img");
+        scale *= 1.05;
+        yesBtn.style.transform = `scale(${scale})`;
+
+        // Update message and image
+        messageIndex = (messageIndex + 1) % messages.length;
+        textDiv.innerHTML = messages[messageIndex];
+        imgElement.src = images[messageIndex];
+      }
+
+      function showLove() {
+        const container = document.querySelector(".button-container");
+        container.innerHTML = `
+          <div class="image-container">
+            <img src="https://gifdb.com/images/high/cute-love-bear-hug-heart-float-j6k1qzxk0xt6cq0g.gif" alt="Love celebration">
+          </div>
+          <div class="text" style="font-size: 28px;">
+            Yay! ❤️ You've made me the happiest person! ❤️
+          </div>
+        `;
+        // Add heart animation to background
+        createHearts();
+      }
+
+      function createHearts() {
+        setInterval(() => {
+          const heart = document.createElement("div");
+          heart.innerHTML = "❤️";
+          heart.style.position = "fixed";
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.top = "100vh";
+          heart.style.fontSize = Math.random() * 20 + 10 + "px";
+          heart.style.animation = "float 4s linear forwards";
+          document.body.appendChild(heart);
+          // Remove the heart after animation completes
+          setTimeout(() => heart.remove(), 4000);
+        }, 300);
+      }
+
+      // Add CSS animation for floating hearts
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes float {
+          to {
+            transform: translateY(-100vh);
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>
