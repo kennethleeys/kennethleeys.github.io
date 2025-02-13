@@ -100,10 +100,23 @@
         "/flowers.gif", // With flowers
         "/milk.gif", // With milk
         "/heartbroken.gif", // Sad with broken heart
-        "/game.gif", // Dancing happily
+        "/game.gif", // bed
         "/roll.gif", // Begging
         "/gwenchana.gif", // Determined with hearts
       ];
+
+      // Preload images
+      const preloadImages = () => {
+        const img = new Image();
+        img.src = "/evil.gif";
+        images.forEach((src) => {
+          const img = new Image();
+          img.src = src;
+        });
+      };
+
+      // Call preload when page loads
+      window.addEventListener("load", preloadImages);
 
       function makeYesBigger() {
         const yesBtn = document.getElementById("yesBtn");
@@ -122,7 +135,7 @@
         const container = document.querySelector(".button-container");
         container.innerHTML = `
           <div class="image-container">
-            <img src="/feet.gif" alt="Love celebration">
+            <img src="/evil.gif" alt="Love celebration">
           </div>
           <div class="text" style="font-size: 28px;">
             Yay! ❤️ You've made me the happiest person! ❤️
