@@ -69,10 +69,7 @@
 
     <div class="button-container">
       <div class="image-container">
-        <img
-          src="https://static.wixstatic.com/media/646c56_eeee63da88dc498a93114fac361578d1~mv2.gif"
-          alt=""
-        />
+        <img src="/feet.gif" alt="" />
       </div>
       <div class="text">Will you be my Valentine? ❤️</div>
       <div class="button-wrapper">
@@ -82,26 +79,6 @@
     </div>
 
     <script>
-      // Add this preload function at the start
-      function preloadImages() {
-        const preloadDiv = document.getElementById("preload");
-        // Combine all GIFs into one array for preloading
-        const allImages = [
-          ...images,
-          "https://raw.githubusercontent.com/kennethleeys/kennethleeys.github.io/refs/heads/main/feet.gif", // Final success GIF
-        ];
-
-        // Create hidden img elements for each GIF
-        allImages.forEach((src) => {
-          const img = document.createElement("img");
-          img.src = src;
-          preloadDiv.appendChild(img);
-        });
-      }
-
-      // Call preload when page loads
-      window.onload = preloadImages;
-
       let scale = 1;
       let messageIndex = 0;
       const messages = [
@@ -117,15 +94,15 @@
       ];
 
       const images = [
-        "https://raw.githubusercontent.com/kennethleeys/kennethleeys.github.io/refs/heads/main/feet.gif", // Initial cute pose
-        "https://raw.githubusercontent.com/kennethleeys/kennethleeys.github.io/refs/heads/main/hands.gif", // Heart eyes
-        "https://raw.githubusercontent.com/kennethleeys/kennethleeys.github.io/refs/heads/main/cry.gif", // Crying
-        "https://raw.githubusercontent.com/kennethleeys/kennethleeys.github.io/refs/heads/main/flowers.gif", // With flowers
-        "https://raw.githubusercontent.com/kennethleeys/kennethleeys.github.io/refs/heads/main/milk.gif", // With milk
-        "hhttps://raw.githubusercontent.com/kennethleeys/kennethleeys.github.io/refs/heads/main/heartbroken.gif", // Sad with broken heart
-        "https://raw.githubusercontent.com/kennethleeys/kennethleeys.github.io/refs/heads/main/game.gif", // Dancing happily
-        "https://raw.githubusercontent.com/kennethleeys/kennethleeys.github.io/refs/heads/main/roll.gif", // Begging
-        "https://raw.githubusercontent.com/kennethleeys/kennethleeys.github.io/refs/heads/main/gwenchana.gif", // Determined with hearts
+        "/feet.gif", // Initial cute pose
+        "/hands.gif", // Heart eyes
+        "/cry.gif", // Crying
+        "/flowers.gif", // With flowers
+        "/milk.gif", // With milk
+        "/heartbroken.gif", // Sad with broken heart
+        "/game.gif", // Dancing happily
+        "/roll.gif", // Begging
+        "/gwenchana.gif", // Determined with hearts
       ];
 
       function makeYesBigger() {
@@ -145,7 +122,7 @@
         const container = document.querySelector(".button-container");
         container.innerHTML = `
           <div class="image-container">
-            <img src="https://gifdb.com/images/high/cute-love-bear-hug-heart-float-j6k1qzxk0xt6cq0g.gif" alt="Love celebration">
+            <img src="/feet.gif" alt="Love celebration">
           </div>
           <div class="text" style="font-size: 28px;">
             Yay! ❤️ You've made me the happiest person! ❤️
