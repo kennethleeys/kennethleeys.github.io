@@ -65,13 +65,13 @@
   </head>
   <body>
     <!-- Add this div for preloading images -->
-    <div id="preload" style="display: none;"></div>
+    <div id="preload" style="display: none"></div>
 
     <div class="button-container">
       <div class="image-container">
         <img
           src="https://static.wixstatic.com/media/646c56_eeee63da88dc498a93114fac361578d1~mv2.gif"
-          alt="Cute Valentine Bear"
+          alt=""
         />
       </div>
       <div class="text">Will you be my Valentine? ❤️</div>
@@ -84,16 +84,16 @@
     <script>
       // Add this preload function at the start
       function preloadImages() {
-        const preloadDiv = document.getElementById('preload');
+        const preloadDiv = document.getElementById("preload");
         // Combine all GIFs into one array for preloading
         const allImages = [
           ...images,
-          "https://gifdb.com/images/high/cute-love-bear-hug-heart-float-j6k1qzxk0xt6cq0g.gif" // Final success GIF
+          "https://gifdb.com/images/high/cute-love-bear-hug-heart-float-j6k1qzxk0xt6cq0g.gif", // Final success GIF
         ];
-        
+
         // Create hidden img elements for each GIF
-        allImages.forEach(src => {
-          const img = document.createElement('img');
+        allImages.forEach((src) => {
+          const img = document.createElement("img");
           img.src = src;
           preloadDiv.appendChild(img);
         });
@@ -106,8 +106,7 @@
       let messageIndex = 0;
       const messages = [
         "Will you be my Valentine now? ❤️",
-        "Are you suuuure? 🥺",
-        "Pretty please? 🌹",
+        "Pretty please? 🌹🥺",
         "I'll be really sad... 😢",
         "What if I give you chocolate? 🍫",
         "And flowers too? 💐",
@@ -118,16 +117,15 @@
       ];
 
       const images = [
-        "https://static.wixstatic.com/media/646c56_eeee63da88dc498a93114fac361578d1~mv2.gif",  // Initial cute pose
-        "https://static.wixstatic.com/media/646c56_522a27df01f840d9b9e137b07ee6e04e~mv2.gif",  // Pleading
-        "https://static.wixstatic.com/media/646c56_2b6d5d9ba3df4a3089a06ccc7e4e058c~mv2.gif",  // Heart eyes
-        "https://static.wixstatic.com/media/646c56_f4e1f87e9b534e4eafb7fdd2f4f54f1d~mv2.gif",  // Crying
-        "https://static.wixstatic.com/media/646c56_c8d1594c06c14a8ba6eff9c18ce86428~mv2.gif",  // With chocolate
-        "https://static.wixstatic.com/media/646c56_e4e5d3c1a5b54982b4622f3b69832e4c~mv2.gif",  // With flowers
-        "https://static.wixstatic.com/media/646c56_f4e1f87e9b534e4eafb7fdd2f4f54f1d~mv2.gif",  // Sad with broken heart
-        "https://static.wixstatic.com/media/646c56_d499644b89d94a87a26c6d2bb25f77e3~mv2.gif",  // Dancing happily
-        "https://static.wixstatic.com/media/646c56_522a27df01f840d9b9e137b07ee6e04e~mv2.gif",  // Begging
-        "https://static.wixstatic.com/media/646c56_2b6d5d9ba3df4a3089a06ccc7e4e058c~mv2.gif",  // Determined with hearts
+        "https://static.wixstatic.com/media/646c56_eeee63da88dc498a93114fac361578d1~mv2.gif", // Initial cute pose
+        "https://static.wixstatic.com/media/646c56_2b6d5d9ba3df4a3089a06ccc7e4e058c~mv2.gif", // Heart eyes
+        "https://static.wixstatic.com/media/646c56_f4e1f87e9b534e4eafb7fdd2f4f54f1d~mv2.gif", // Crying
+        "https://static.wixstatic.com/media/646c56_c8d1594c06c14a8ba6eff9c18ce86428~mv2.gif", // With chocolate
+        "https://static.wixstatic.com/media/646c56_e4e5d3c1a5b54982b4622f3b69832e4c~mv2.gif", // With flowers
+        "https://static.wixstatic.com/media/646c56_f4e1f87e9b534e4eafb7fdd2f4f54f1d~mv2.gif", // Sad with broken heart
+        "https://static.wixstatic.com/media/646c56_d499644b89d94a87a26c6d2bb25f77e3~mv2.gif", // Dancing happily
+        "https://static.wixstatic.com/media/646c56_522a27df01f840d9b9e137b07ee6e04e~mv2.gif", // Begging
+        "https://static.wixstatic.com/media/646c56_2b6d5d9ba3df4a3089a06ccc7e4e058c~mv2.gif", // Determined with hearts
       ];
 
       function makeYesBigger() {
